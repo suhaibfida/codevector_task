@@ -1,4 +1,4 @@
-import { PrismaClient } from "./../generated/prisma/client";
+import { PrismaClient } from "../generated/prisma/client";
 // Import the driver adapter for your specific database (example uses PostgreSQL)
 import { PrismaPg } from "@prisma/adapter-pg";
 // Initialize the adapter according to your driver's requirements
