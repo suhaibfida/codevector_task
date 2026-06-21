@@ -1,5 +1,5 @@
 import express from "express";
-import { prisma } from "./db/src/index";
+import { prisma } from "../db/src/index";
 
 const app = express();
 
