@@ -12,7 +12,7 @@ datasource db {
   provider = "postgresql"
 }
 model Product {
-  id       BigInt   @id @default(autoincrement())
+  id        Int   @id @default(autoincrement())
 
   name      String
   category  String
