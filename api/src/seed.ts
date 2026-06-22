@@ -1,4 +1,4 @@
-import { prisma } from "../src/index";
+import { prisma } from "../db/src/index";
 
 const categories = [
   "Electronics",
