@@ -37,6 +37,7 @@ A full-stack product catalog web application demonstrating cursor-based paginati
 │       │   └── Products.tsx   # Product catalog with pagination
 │       ├── App.css            # Application styles
 │       └── index.css          # Global CSS with theme support
+├── dev.sh          # Script to run both servers from root
 ├── index.ts        # Root placeholder entry
 ├── package.json    # Root workspace config
 └── tsconfig.json   # Root TypeScript config
@@ -73,23 +74,17 @@ cd api
 bun run src/seed.ts
 ```
 
-### 5. Start the backend
+### 5. Run both servers (from root)
 
 ```bash
-cd api
 bun run dev
 ```
 
-The API runs on `http://localhost:3000`.
+This starts both the API (port 3000) and frontend (port 5173) concurrently. Press `Ctrl+C` to stop both.
 
-### 6. Start the frontend (separate terminal)
-
-```bash
-cd client
-bun run dev
-```
-
-The frontend runs on `http://localhost:5173` and proxies `/api` requests to the backend.
+Or start each separately:
+- `bun run dev:api` — API only on `http://localhost:3000`
+- `bun run dev:client` — Frontend only on `http://localhost:5173` (proxies `/api` requests to the backend)
 
 ## API Endpoints
 
@@ -146,6 +141,18 @@ Composite indexes:
 - **Dark/light theme** — CSS custom properties for automatic theme support
 
 ## Available Scripts
+
+### Root
+
+| Command | Description |
+|---------|-------------|
+| `bun run dev` | Start both API and frontend servers concurrently |
+| `bun run dev:api` | Start API server only |
+| `bun run dev:client` | Start frontend only |
+| `bun run install:all` | Install dependencies for both packages |
+| `bun run db:seed` | Seed database with 200k products |
+
+Alternatively, run `bash dev.sh` directly.
 
 ### Backend (`api/`)
 

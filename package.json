@@ -3,6 +3,13 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
+  "scripts": {
+    "dev": "bash dev.sh",
+    "dev:api": "cd api && bun run dev",
+    "dev:client": "cd client && bun run dev",
+    "install:all": "cd api && bun install && cd ../client && bun install",
+    "db:seed": "cd api && bun run src/seed.ts"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
